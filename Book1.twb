@@ -1,0 +1,1161 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20181.18.0510.1418                               -->
+<workbook original-version='18.1' source-build='2018.1.1 (20181.18.0510.1418)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='kccrime_under91_cleaned' inline='true' name='federated.1rci6y00lfaet91c8izpt1f1zx81' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='kccrime_under91_cleaned' name='textscan.0fs0eew15e34y51b1lzng02j93iv'>
+            <connection class='textscan' directory='C:/DataAnalytics/KU_Bootcamp/Future Thoughts/Bootcamp Cirriculum/KCMO Crime Data' filename='kccrime_under91_cleaned.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0fs0eew15e34y51b1lzng02j93iv' name='kccrime_under91_cleaned.csv' table='[kccrime_under91_cleaned#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='Report_No' ordinal='0' />
+            <column datatype='string' name='(All)' ordinal='1' />
+            <column datatype='string' name='F3' ordinal='2' />
+            <column datatype='string' name='F4' ordinal='3' />
+            <column datatype='string' name='F5' ordinal='4' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[kccrime_under91_cleaned.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Report_No</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Report_No]</local-name>
+            <parent-name>[kccrime_under91_cleaned.csv]</parent-name>
+            <remote-alias>Report_No</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>(All)</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[(All)]</local-name>
+            <parent-name>[kccrime_under91_cleaned.csv]</parent-name>
+            <remote-alias>(All)</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F3</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F3]</local-name>
+            <parent-name>[kccrime_under91_cleaned.csv]</parent-name>
+            <remote-alias>F3</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F4</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F4]</local-name>
+            <parent-name>[kccrime_under91_cleaned.csv]</parent-name>
+            <remote-alias>F4</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>F5</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[F5]</local-name>
+            <parent-name>[kccrime_under91_cleaned.csv]</parent-name>
+            <remote-alias>F5</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[County]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Report No' datatype='integer' name='[Report_No]' role='measure' type='quantitative' />
+      <column caption='Zip Code' datatype='real' default-format='*00000' name='[zip_code]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.576471' measure-ordering='alphabetic' measure-percentage='0.423529' show-structure='true' user-set-layout='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='alphabetical-order' />
+    </datasource>
+    <datasource caption='kc_victims_real_ages.csv+ (Multiple Connections)' inline='true' name='federated.1wv674x1fi8syi15opa160pxlmis' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='kc_victims_real_ages' name='textscan.1cqdi0h1qjzyk419jw42y0t1xvlj'>
+            <connection class='textscan' directory='C:/DataAnalytics/KU_Bootcamp/Future Thoughts/Bootcamp Cirriculum/KCMO Crime Data' filename='kc_victims_real_ages.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='kc_suspects_real_ages' name='textscan.0nce8rl09cuu2a11l6t611sb0r7q'>
+            <connection class='textscan' directory='C:/DataAnalytics/KU_Bootcamp/Future Thoughts/Bootcamp Cirriculum/KCMO Crime Data' filename='kc_suspects_real_ages.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[kc_victims_real_ages.csv].[Address]' />
+              <expression op='[kc_suspects_real_ages.csv].[Address]' />
+            </expression>
+          </clause>
+          <relation connection='textscan.1cqdi0h1qjzyk419jw42y0t1xvlj' name='kc_victims_real_ages.csv' table='[kc_victims_real_ages#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='Address' ordinal='0' />
+              <column datatype='string' name='Age' ordinal='1' />
+              <column datatype='string' name='Area' ordinal='2' />
+              <column datatype='integer' name='Beat' ordinal='3' />
+              <column datatype='string' name='City' ordinal='4' />
+              <column datatype='string' name='DVFlag' ordinal='5' />
+              <column datatype='string' name='Description' ordinal='6' />
+              <column datatype='string' name='Firearm Used Flag' ordinal='7' />
+              <column datatype='string' name='Firearm Used Flag  ' ordinal='8' />
+              <column datatype='datetime' name='From Time' ordinal='9' />
+              <column datatype='string' name='IBRS' ordinal='10' />
+              <column datatype='string' name='Involvement' ordinal='11' />
+              <column datatype='string' name='Latitude' ordinal='12' />
+              <column datatype='string' name='Location' ordinal='13' />
+              <column datatype='string' name='Location 1' ordinal='14' />
+              <column datatype='string' name='Longitude' ordinal='15' />
+              <column datatype='string' name='Offense' ordinal='16' />
+              <column datatype='string' name='Race' ordinal='17' />
+              <column datatype='string' name='Reported Time' ordinal='18' />
+              <column datatype='string' name='Reported_Date' ordinal='19' />
+              <column datatype='string' name='Reported_Time' ordinal='20' />
+              <column datatype='string' name='Sex' ordinal='21' />
+              <column datatype='string' name='To Time' ordinal='22' />
+              <column datatype='string' name='zip_code' ordinal='23' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0nce8rl09cuu2a11l6t611sb0r7q' name='kc_suspects_real_ages.csv' table='[kc_suspects_real_ages#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='Address' ordinal='0' />
+              <column datatype='string' name='Age' ordinal='1' />
+              <column datatype='string' name='Area' ordinal='2' />
+              <column datatype='integer' name='Beat' ordinal='3' />
+              <column datatype='string' name='City' ordinal='4' />
+              <column datatype='string' name='DVFlag' ordinal='5' />
+              <column datatype='string' name='Description' ordinal='6' />
+              <column datatype='string' name='Firearm Used Flag' ordinal='7' />
+              <column datatype='string' name='Firearm Used Flag  ' ordinal='8' />
+              <column datatype='datetime' name='From Time' ordinal='9' />
+              <column datatype='string' name='IBRS' ordinal='10' />
+              <column datatype='string' name='Involvement' ordinal='11' />
+              <column datatype='string' name='Latitude' ordinal='12' />
+              <column datatype='string' name='Location' ordinal='13' />
+              <column datatype='string' name='Location 1' ordinal='14' />
+              <column datatype='string' name='Longitude' ordinal='15' />
+              <column datatype='string' name='Offense' ordinal='16' />
+              <column datatype='string' name='Race' ordinal='17' />
+              <column datatype='string' name='Reported Time' ordinal='18' />
+              <column datatype='string' name='Reported_Date' ordinal='19' />
+              <column datatype='string' name='Reported_Time' ordinal='20' />
+              <column datatype='string' name='Sex' ordinal='21' />
+              <column datatype='string' name='To Time' ordinal='22' />
+              <column datatype='string' name='zip_code' ordinal='23' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[Address (kc_suspects_real_ages.csv)]' value='[kc_suspects_real_ages.csv].[Address]' />
+          <map key='[Address]' value='[kc_victims_real_ages.csv].[Address]' />
+          <map key='[Age (kc_suspects_real_ages.csv)]' value='[kc_suspects_real_ages.csv].[Age]' />
+          <map key='[Age]' value='[kc_victims_real_ages.csv].[Age]' />
+          <map key='[Area (kc_suspects_real_ages.csv)]' value='[kc_suspects_real_ages.csv].[Area]' />
+          <map key='[Area]' value='[kc_victims_real_ages.csv].[Area]' />
+          <map key='[Beat (kc_suspects_real_ages.csv)]' value='[kc_suspects_real_ages.csv].[Beat]' />
+          <map key='[Beat]' value='[kc_victims_real_ages.csv].[Beat]' />
+          <map key='[City (kc_suspects_real_ages.csv)]' value='[kc_suspects_real_ages.csv].[City]' />
+          <map key='[City]' value='[kc_victims_real_ages.csv].[City]' />
+          <map key='[DVFlag (kc_suspects_real_ages.csv)]' value='[kc_suspects_real_ages.csv].[DVFlag]' />
+          <map key='[DVFlag]' value='[kc_victims_real_ages.csv].[DVFlag]' />
+          <map key='[Description (kc_suspects_real_ages.csv)]' value='[kc_suspects_real_ages.csv].[Description]' />
+          <map key='[Description]' value='[kc_victims_real_ages.csv].[Description]' />
+          <map key='[Firearm Used Flag   (kc_suspects_real_ages.csv)]' value='[kc_suspects_real_ages.csv].[Firearm Used Flag  ]' />
+          <map key='[Firearm Used Flag  ]' value='[kc_victims_real_ages.csv].[Firearm Used Flag  ]' />
+          <map key='[Firearm Used Flag (kc_suspects_real_ages.csv)]' value='[kc_suspects_real_ages.csv].[Firearm Used Flag]' />
+          <map key='[Firearm Used Flag]' value='[kc_victims_real_ages.csv].[Firearm Used Flag]' />
+          <map key='[From Time (kc_suspects_real_ages.csv)]' value='[kc_suspects_real_ages.csv].[From Time]' />
+          <map key='[From Time]' value='[kc_victims_real_ages.csv].[From Time]' />
+          <map key='[IBRS (kc_suspects_real_ages.csv)]' value='[kc_suspects_real_ages.csv].[IBRS]' />
+          <map key='[IBRS]' value='[kc_victims_real_ages.csv].[IBRS]' />
+          <map key='[Involvement (kc_suspects_real_ages.csv)]' value='[kc_suspects_real_ages.csv].[Involvement]' />
+          <map key='[Involvement]' value='[kc_victims_real_ages.csv].[Involvement]' />
+          <map key='[Latitude (kc_suspects_real_ages.csv)]' value='[kc_suspects_real_ages.csv].[Latitude]' />
+          <map key='[Latitude]' value='[kc_victims_real_ages.csv].[Latitude]' />
+          <map key='[Location (kc_suspects_real_ages.csv)]' value='[kc_suspects_real_ages.csv].[Location]' />
+          <map key='[Location 1 (kc_suspects_real_ages.csv)]' value='[kc_suspects_real_ages.csv].[Location 1]' />
+          <map key='[Location 1]' value='[kc_victims_real_ages.csv].[Location 1]' />
+          <map key='[Location]' value='[kc_victims_real_ages.csv].[Location]' />
+          <map key='[Longitude (kc_suspects_real_ages.csv)]' value='[kc_suspects_real_ages.csv].[Longitude]' />
+          <map key='[Longitude]' value='[kc_victims_real_ages.csv].[Longitude]' />
+          <map key='[Offense (kc_suspects_real_ages.csv)]' value='[kc_suspects_real_ages.csv].[Offense]' />
+          <map key='[Offense]' value='[kc_victims_real_ages.csv].[Offense]' />
+          <map key='[Race (kc_suspects_real_ages.csv)]' value='[kc_suspects_real_ages.csv].[Race]' />
+          <map key='[Race]' value='[kc_victims_real_ages.csv].[Race]' />
+          <map key='[Reported Time (kc_suspects_real_ages.csv)]' value='[kc_suspects_real_ages.csv].[Reported Time]' />
+          <map key='[Reported Time]' value='[kc_victims_real_ages.csv].[Reported Time]' />
+          <map key='[Reported_Date (kc_suspects_real_ages.csv)]' value='[kc_suspects_real_ages.csv].[Reported_Date]' />
+          <map key='[Reported_Date]' value='[kc_victims_real_ages.csv].[Reported_Date]' />
+          <map key='[Reported_Time (kc_suspects_real_ages.csv)]' value='[kc_suspects_real_ages.csv].[Reported_Time]' />
+          <map key='[Reported_Time]' value='[kc_victims_real_ages.csv].[Reported_Time]' />
+          <map key='[Sex (kc_suspects_real_ages.csv)]' value='[kc_suspects_real_ages.csv].[Sex]' />
+          <map key='[Sex]' value='[kc_victims_real_ages.csv].[Sex]' />
+          <map key='[To Time (kc_suspects_real_ages.csv)]' value='[kc_suspects_real_ages.csv].[To Time]' />
+          <map key='[To Time]' value='[kc_victims_real_ages.csv].[To Time]' />
+          <map key='[zip_code (kc_suspects_real_ages.csv)]' value='[kc_suspects_real_ages.csv].[zip_code]' />
+          <map key='[zip_code]' value='[kc_victims_real_ages.csv].[zip_code]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[kc_victims_real_ages.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='quote-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Address</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Address]</local-name>
+            <parent-name>[kc_victims_real_ages.csv]</parent-name>
+            <remote-alias>Address</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Age</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Age]</local-name>
+            <parent-name>[kc_victims_real_ages.csv]</parent-name>
+            <remote-alias>Age</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Area</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Area]</local-name>
+            <parent-name>[kc_victims_real_ages.csv]</parent-name>
+            <remote-alias>Area</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Beat</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Beat]</local-name>
+            <parent-name>[kc_victims_real_ages.csv]</parent-name>
+            <remote-alias>Beat</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>City</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[City]</local-name>
+            <parent-name>[kc_victims_real_ages.csv]</parent-name>
+            <remote-alias>City</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DVFlag</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DVFlag]</local-name>
+            <parent-name>[kc_victims_real_ages.csv]</parent-name>
+            <remote-alias>DVFlag</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Description</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Description]</local-name>
+            <parent-name>[kc_victims_real_ages.csv]</parent-name>
+            <remote-alias>Description</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Firearm Used Flag</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Firearm Used Flag]</local-name>
+            <parent-name>[kc_victims_real_ages.csv]</parent-name>
+            <remote-alias>Firearm Used Flag</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Firearm Used Flag  </remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Firearm Used Flag  ]</local-name>
+            <parent-name>[kc_victims_real_ages.csv]</parent-name>
+            <remote-alias>Firearm Used Flag  </remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>From Time</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[From Time]</local-name>
+            <parent-name>[kc_victims_real_ages.csv]</parent-name>
+            <remote-alias>From Time</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>IBRS</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[IBRS]</local-name>
+            <parent-name>[kc_victims_real_ages.csv]</parent-name>
+            <remote-alias>IBRS</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Involvement</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Involvement]</local-name>
+            <parent-name>[kc_victims_real_ages.csv]</parent-name>
+            <remote-alias>Involvement</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Latitude</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Latitude]</local-name>
+            <parent-name>[kc_victims_real_ages.csv]</parent-name>
+            <remote-alias>Latitude</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Location</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Location]</local-name>
+            <parent-name>[kc_victims_real_ages.csv]</parent-name>
+            <remote-alias>Location</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Location 1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Location 1]</local-name>
+            <parent-name>[kc_victims_real_ages.csv]</parent-name>
+            <remote-alias>Location 1</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Longitude</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Longitude]</local-name>
+            <parent-name>[kc_victims_real_ages.csv]</parent-name>
+            <remote-alias>Longitude</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Offense</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Offense]</local-name>
+            <parent-name>[kc_victims_real_ages.csv]</parent-name>
+            <remote-alias>Offense</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Race</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Race]</local-name>
+            <parent-name>[kc_victims_real_ages.csv]</parent-name>
+            <remote-alias>Race</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Reported Time</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Reported Time]</local-name>
+            <parent-name>[kc_victims_real_ages.csv]</parent-name>
+            <remote-alias>Reported Time</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Reported_Date</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Reported_Date]</local-name>
+            <parent-name>[kc_victims_real_ages.csv]</parent-name>
+            <remote-alias>Reported_Date</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Reported_Time</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Reported_Time]</local-name>
+            <parent-name>[kc_victims_real_ages.csv]</parent-name>
+            <remote-alias>Reported_Time</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sex</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Sex]</local-name>
+            <parent-name>[kc_victims_real_ages.csv]</parent-name>
+            <remote-alias>Sex</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>To Time</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[To Time]</local-name>
+            <parent-name>[kc_victims_real_ages.csv]</parent-name>
+            <remote-alias>To Time</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>zip_code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[zip_code]</local-name>
+            <parent-name>[kc_victims_real_ages.csv]</parent-name>
+            <remote-alias>zip_code</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[kc_suspects_real_ages.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='quote-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Address</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Address (kc_suspects_real_ages.csv)]</local-name>
+            <parent-name>[kc_suspects_real_ages.csv]</parent-name>
+            <remote-alias>Address</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Age</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Age (kc_suspects_real_ages.csv)]</local-name>
+            <parent-name>[kc_suspects_real_ages.csv]</parent-name>
+            <remote-alias>Age</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Area</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Area (kc_suspects_real_ages.csv)]</local-name>
+            <parent-name>[kc_suspects_real_ages.csv]</parent-name>
+            <remote-alias>Area</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Beat</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Beat (kc_suspects_real_ages.csv)]</local-name>
+            <parent-name>[kc_suspects_real_ages.csv]</parent-name>
+            <remote-alias>Beat</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>City</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[City (kc_suspects_real_ages.csv)]</local-name>
+            <parent-name>[kc_suspects_real_ages.csv]</parent-name>
+            <remote-alias>City</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DVFlag</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DVFlag (kc_suspects_real_ages.csv)]</local-name>
+            <parent-name>[kc_suspects_real_ages.csv]</parent-name>
+            <remote-alias>DVFlag</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Description</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Description (kc_suspects_real_ages.csv)]</local-name>
+            <parent-name>[kc_suspects_real_ages.csv]</parent-name>
+            <remote-alias>Description</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Firearm Used Flag</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Firearm Used Flag (kc_suspects_real_ages.csv)]</local-name>
+            <parent-name>[kc_suspects_real_ages.csv]</parent-name>
+            <remote-alias>Firearm Used Flag</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Firearm Used Flag  </remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Firearm Used Flag   (kc_suspects_real_ages.csv)]</local-name>
+            <parent-name>[kc_suspects_real_ages.csv]</parent-name>
+            <remote-alias>Firearm Used Flag  </remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>From Time</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[From Time (kc_suspects_real_ages.csv)]</local-name>
+            <parent-name>[kc_suspects_real_ages.csv]</parent-name>
+            <remote-alias>From Time</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>IBRS</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[IBRS (kc_suspects_real_ages.csv)]</local-name>
+            <parent-name>[kc_suspects_real_ages.csv]</parent-name>
+            <remote-alias>IBRS</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Involvement</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Involvement (kc_suspects_real_ages.csv)]</local-name>
+            <parent-name>[kc_suspects_real_ages.csv]</parent-name>
+            <remote-alias>Involvement</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Latitude</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Latitude (kc_suspects_real_ages.csv)]</local-name>
+            <parent-name>[kc_suspects_real_ages.csv]</parent-name>
+            <remote-alias>Latitude</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Location</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Location (kc_suspects_real_ages.csv)]</local-name>
+            <parent-name>[kc_suspects_real_ages.csv]</parent-name>
+            <remote-alias>Location</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Location 1</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Location 1 (kc_suspects_real_ages.csv)]</local-name>
+            <parent-name>[kc_suspects_real_ages.csv]</parent-name>
+            <remote-alias>Location 1</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Longitude</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Longitude (kc_suspects_real_ages.csv)]</local-name>
+            <parent-name>[kc_suspects_real_ages.csv]</parent-name>
+            <remote-alias>Longitude</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Offense</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Offense (kc_suspects_real_ages.csv)]</local-name>
+            <parent-name>[kc_suspects_real_ages.csv]</parent-name>
+            <remote-alias>Offense</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Race</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Race (kc_suspects_real_ages.csv)]</local-name>
+            <parent-name>[kc_suspects_real_ages.csv]</parent-name>
+            <remote-alias>Race</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Reported Time</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Reported Time (kc_suspects_real_ages.csv)]</local-name>
+            <parent-name>[kc_suspects_real_ages.csv]</parent-name>
+            <remote-alias>Reported Time</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Reported_Date</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Reported_Date (kc_suspects_real_ages.csv)]</local-name>
+            <parent-name>[kc_suspects_real_ages.csv]</parent-name>
+            <remote-alias>Reported_Date</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Reported_Time</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Reported_Time (kc_suspects_real_ages.csv)]</local-name>
+            <parent-name>[kc_suspects_real_ages.csv]</parent-name>
+            <remote-alias>Reported_Time</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sex</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Sex (kc_suspects_real_ages.csv)]</local-name>
+            <parent-name>[kc_suspects_real_ages.csv]</parent-name>
+            <remote-alias>Sex</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>To Time</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[To Time (kc_suspects_real_ages.csv)]</local-name>
+            <parent-name>[kc_suspects_real_ages.csv]</parent-name>
+            <remote-alias>To Time</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>zip_code</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[zip_code (kc_suspects_real_ages.csv)]</local-name>
+            <parent-name>[kc_suspects_real_ages.csv]</parent-name>
+            <remote-alias>zip_code</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Address (kc suspects real ages.csv)' datatype='string' name='[Address (kc_suspects_real_ages.csv)]' role='dimension' type='nominal' />
+      <column caption='Age (kc suspects real ages.csv)' datatype='string' name='[Age (kc_suspects_real_ages.csv)]' role='dimension' type='nominal' />
+      <column caption='Area (kc suspects real ages.csv)' datatype='string' name='[Area (kc_suspects_real_ages.csv)]' role='dimension' type='nominal' />
+      <column caption='Beat (kc suspects real ages.csv)' datatype='integer' name='[Beat (kc_suspects_real_ages.csv)]' role='measure' type='quantitative' />
+      <column caption='City (kc suspects real ages.csv)' datatype='string' name='[City (kc_suspects_real_ages.csv)]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column datatype='string' name='[City]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column caption='DVFlag (kc suspects real ages.csv)' datatype='string' name='[DVFlag (kc_suspects_real_ages.csv)]' role='dimension' type='nominal' />
+      <column caption='DV Flag' datatype='string' name='[DVFlag]' role='dimension' type='nominal' />
+      <column caption='Description (kc suspects real ages.csv)' datatype='string' name='[Description (kc_suspects_real_ages.csv)]' role='dimension' type='nominal' />
+      <column caption='Firearm Used Flag   (kc suspects real ages.csv)' datatype='string' name='[Firearm Used Flag   (kc_suspects_real_ages.csv)]' role='dimension' type='nominal' />
+      <column caption='Firearm Used Flag1' datatype='string' name='[Firearm Used Flag  ]' role='dimension' type='nominal' />
+      <column caption='Firearm Used Flag (kc suspects real ages.csv)' datatype='string' name='[Firearm Used Flag (kc_suspects_real_ages.csv)]' role='dimension' type='nominal' />
+      <column aggregation='Hour' caption='From Time (kc suspects real ages.csv)' datatype='datetime' name='[From Time (kc_suspects_real_ages.csv)]' role='dimension' type='ordinal' />
+      <column aggregation='Hour' datatype='datetime' name='[From Time]' role='dimension' type='ordinal' />
+      <column caption='IBRS (kc suspects real ages.csv)' datatype='string' name='[IBRS (kc_suspects_real_ages.csv)]' role='dimension' type='nominal' />
+      <column caption='Ibrs' datatype='string' name='[IBRS]' role='dimension' type='nominal' />
+      <column caption='Involvement (kc suspects real ages.csv)' datatype='string' name='[Involvement (kc_suspects_real_ages.csv)]' role='dimension' type='nominal' />
+      <column caption='Latitude (kc suspects real ages.csv)' datatype='string' name='[Latitude (kc_suspects_real_ages.csv)]' role='dimension' type='nominal' />
+      <column caption='Location (kc suspects real ages.csv)' datatype='string' name='[Location (kc_suspects_real_ages.csv)]' role='dimension' type='nominal' />
+      <column caption='Location 1 (kc suspects real ages.csv)' datatype='string' name='[Location 1 (kc_suspects_real_ages.csv)]' role='dimension' type='nominal' />
+      <column caption='Longitude (kc suspects real ages.csv)' datatype='string' name='[Longitude (kc_suspects_real_ages.csv)]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Offense (kc suspects real ages.csv)' datatype='string' name='[Offense (kc_suspects_real_ages.csv)]' role='dimension' type='nominal' />
+      <column caption='Race (kc suspects real ages.csv)' datatype='string' name='[Race (kc_suspects_real_ages.csv)]' role='dimension' type='nominal' />
+      <column caption='Reported Time (kc suspects real ages.csv)' datatype='string' name='[Reported Time (kc_suspects_real_ages.csv)]' role='dimension' type='nominal' />
+      <column caption='Reported Date (kc suspects real ages.csv)' datatype='string' name='[Reported_Date (kc_suspects_real_ages.csv)]' role='dimension' type='nominal' />
+      <column caption='Reported Date' datatype='string' name='[Reported_Date]' role='dimension' type='nominal' />
+      <column caption='Reported Time (kc suspects real ages.csv)1' datatype='string' name='[Reported_Time (kc_suspects_real_ages.csv)]' role='dimension' type='nominal' />
+      <column caption='Reported Time1' datatype='string' name='[Reported_Time]' role='dimension' type='nominal' />
+      <column caption='Sex (kc suspects real ages.csv)' datatype='string' name='[Sex (kc_suspects_real_ages.csv)]' role='dimension' type='nominal' />
+      <column caption='To Time (kc suspects real ages.csv)' datatype='string' name='[To Time (kc_suspects_real_ages.csv)]' role='dimension' type='nominal' />
+      <column caption='Zip Code (Kc Suspects Real Ages.Csv)' datatype='string' name='[zip_code (kc_suspects_real_ages.csv)]' role='dimension' semantic-role='[ZipCode].[Name]' type='nominal' />
+      <column caption='Zip Code' datatype='string' name='[zip_code]' role='dimension' semantic-role='[ZipCode].[Name]' type='nominal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.604706' measure-ordering='alphabetic' measure-percentage='0.395294' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='kc_victims_real_ages.csv+ (Multiple Connections)' name='federated.1wv674x1fi8syi15opa160pxlmis' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1wv674x1fi8syi15opa160pxlmis'>
+            <column caption='Beat (kc suspects real ages.csv)' datatype='integer' name='[Beat (kc_suspects_real_ages.csv)]' role='measure' type='quantitative' />
+            <column-instance column='[Beat (kc_suspects_real_ages.csv)]' derivation='Attribute' name='[attr:Beat (kc_suspects_real_ages.csv):qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.1wv674x1fi8syi15opa160pxlmis].[attr:Beat (kc_suspects_real_ages.csv):qk]' included-values='in-range' />
+          <slices>
+            <column>[federated.1wv674x1fi8syi15opa160pxlmis].[attr:Beat (kc_suspects_real_ages.csv):qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='map-layer'>
+            <format attr='enabled' id='tab_base' value='true' />
+            <format attr='enabled' id='um_lcover' value='true' />
+            <format attr='enabled' id='tab_coastline' value='false' />
+            <format attr='enabled' id='pp2_line' value='false' />
+            <format attr='enabled' id='light_adm0_bnd' value='false' />
+            <format attr='enabled' id='light_adm0_lbl' value='false' />
+            <format attr='enabled' id='um_adm0_bnd' value='true' />
+            <format attr='enabled' id='um_adm0_lbl' value='true' />
+            <format attr='enabled' id='light_pp2_statebounds' value='false' />
+            <format attr='enabled' id='light_pp2_statelabels' value='false' />
+            <format attr='enabled' id='pp2_adminlabels' value='false' />
+            <format attr='enabled' id='pp2_statebounds' value='true' />
+            <format attr='enabled' id='pp2_statelabels' value='true' />
+            <format attr='enabled' id='countybounds' value='false' />
+            <format attr='enabled' id='countylabels' value='false' />
+            <format attr='enabled' id='zipbounds' value='false' />
+            <format attr='enabled' id='ziplabels' value='false' />
+            <format attr='enabled' id='tab_areabounds' value='false' />
+            <format attr='enabled' id='tab_arealabels' value='false' />
+            <format attr='enabled' id='tab_msabounds' value='false' />
+            <format attr='enabled' id='tab_msalabels' value='false' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='0.833333' source-height='51'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1rci6y00lfaet91c8izpt1f1zx81].[none:County:nk]</field>
+            <field>[federated.1rci6y00lfaet91c8izpt1f1zx81].[none:Sex:nk]</field>
+            <field>[federated.1rci6y00lfaet91c8izpt1f1zx81].[none:zip_code:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='576' name='Sheet 1' width='576'>
+      iVBORw0KGgoAAAANSUhEUgAAAkAAAAJACAYAAABlmtk2AAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAKIklEQVR4nO3asY2EQAAEwb0XEWCSf3C42AhxOazxq1NXRTBmG/N53/cdAAAhf6sHAAD8
+      NwEEAOQIIAAgRwABADkCCADIEUAAQI4AAgByBBAAkCOAAIAcAQQA5AggACBHAAEAOQIIAMgR
+      QABAjgACAHIEEACQI4AAgBwBBADkCCAAIEcAAQA5AggAyBFAAECOAAIAcgQQAJAjgACAHAEE
+      AOQIIAAgRwABADkCCADIEUAAQI4AAgByBBAAkCOAAIAcAQQA5AggACBHAAEAOQIIAMgRQABA
+      jgACAHIEEACQI4AAgBwBBADkCCAAIEcAAQA5AggAyBFAAECOAAIAcgQQAJAjgACAHAEEAOQI
+      IAAgRwABADkCCADIEUAAQI4AAgByBBAAkCOAAIAcAQQA5AggACBHAAEAOQIIAMgRQABAjgAC
+      AHK21QN+0X3f4zzP1TMAgEkCaMLzPOO6rnEcx+opAMAEATRp27ax7/vqGQDABB8gACBHAAEA
+      OQIIAMgRQABAjgACAHIEEACQI4AAgBwBBADkCCAAIEcAAQA5AggAyBFAAECOAAIAcgQQAJAj
+      gACAHAEEAOQIIAAgRwABADkCCADIEUAAQI4AAgByBBAAkCOAAIAcAQQA5AggACBHAAEAOQII
+      AMgRQABAjgACAHIEEACQI4AAgBwBBADkCCAAIEcAAQA5AggAyBFAAECOAAIAcgQQAJAjgACA
+      HAEEAOQIIAAgRwABADkCCADIEUAAQI4AAgByBBAAkCOAAIAcAQQA5AggACBHAAEAOQIIAMgR
+      QABAjgACAHIEEACQI4AAgBwBBADkCCAAIEcAAQA5AggAyBFAAECOAAIAcgQQAJAjgACAHAEE
+      AOQIIAAgRwABADkCCADIEUAAQI4AAgByBBAAkCOAAIAcAQQA5AggACBHAAEAOQIIAMgRQABA
+      jgACAHIEEACQI4AAgBwBBADkCCAAIEcAAQA5AggAyBFAAECOAAIAcgQQAJAjgACAHAEEAOQI
+      IAAgRwABADkCCADIEUAAQI4AAgByBBAAkCOAAIAcAQQA5AggACBHAAEAOQIIAMgRQABAjgAC
+      AHIEEACQI4AAgBwBBADkCCAAIEcAAQA5AggAyBFAAECOAAIAcgQQAJAjgACAHAEEAOQIIAAg
+      RwABADkCCADIEUAAQI4AAgByBBAAkCOAAIAcAQQA5AggACBHAAEAOQIIAMgRQABAjgACAHIE
+      EACQI4AAgBwBBADkCCAAIEcAAQA5AggAyBFAAECOAAIAcgQQAJAjgACAHAEEAOQIIAAgRwAB
+      ADkCCADIEUAAQI4AAgByBBAAkCOAAIAcAQQA5AggACBHAAEAOQIIAMgRQABAjgACAHIEEACQ
+      I4AAgBwBBADkCCAAIEcAAQA5AggAyBFAAECOAAIAcgQQAJAjgACAHAEEAOQIIAAgRwABADkC
+      CADIEUAAQI4AAgByBBAAkCOAAIAcAQQA5AggACBHAAEAOQIIAMgRQABAjgACAHIEEACQI4AA
+      gBwBBADkCCAAIEcAAQA5AggAyBFAAECOAAIAcgQQAJAjgACAHAEEAOQIIAAgRwABADkCCADI
+      EUAAQI4AAgByBBAAkCOAAIAcAQQA5AggACBHAAEAOQIIAMgRQABAjgACAHIEEACQI4AAgBwB
+      BADkCCAAIEcAAQA5AggAyBFAAECOAAIAcgQQAJAjgACAHAEEAOQIIAAgRwABADkCCADIEUAA
+      QI4AAgByBBAAkCOAAIAcAQQA5AggACBHAAEAOQIIAMgRQABAjgACAHIEEACQI4AAgBwBBADk
+      CCAAIEcAAQA5AggAyBFAAECOAAIAcgQQAJAjgACAHAEEAOQIIAAgRwABADkCCADIEUAAQI4A
+      AgByBBAAkCOAAIAcAQQA5AggACBHAAEAOQIIAMgRQABAjgACAHIEEACQI4AAgBwBBADkCCAA
+      IEcAAQA5AggAyBFAAECOAAIAcgQQAJAjgACAHAEEAOQIIAAgRwABADkCCADIEUAAQI4AAgBy
+      BBAAkCOAAIAcAQQA5AggACBHAAEAOQIIAMgRQABAjgACAHIEEACQI4AAgBwBBADkCCAAIEcA
+      AQA5AggAyBFAAECOAAIAcgQQAJAjgACAHAEEAOQIIAAgRwABADkCCADIEUAAQI4AAgByBBAA
+      kCOAAIAcAQQA5AggACBHAAEAOQIIAMgRQABAjgACAHIEEACQI4AAgBwBBADkCCAAIEcAAQA5
+      AggAyBFAAECOAAIAcgQQAJAjgACAHAEEAOQIIAAgRwABADkCCADIEUAAQI4AAgByBBAAkCOA
+      AIAcAQQA5AggACBHAAEAOQIIAMgRQABAjgACAHIEEACQI4AAgBwBBADkCCAAIEcAAQA5AggA
+      yBFAAECOAAIAcgQQAJAjgACAHAEEAOQIIAAgRwABADkCCADIEUAAQI4AAgByBBAAkCOAAIAc
+      AQQA5AggACBHAAEAOQIIAMgRQABAjgACAHIEEACQI4AAgBwBBADkCCAAIEcAAQA5AggAyBFA
+      AECOAAIAcgQQAJAjgACAHAEEAOQIIAAgRwABADkCCADIEUAAQI4AAgByBBAAkCOAAIAcAQQA
+      5AggACBHAAEAOQIIAMgRQABAjgACAHIEEACQI4AAgBwBBADkCCAAIEcAAQA5AggAyBFAAECO
+      AAIAcgQQAJAjgACAHAEEAOQIIAAgRwABADkCCADIEUAAQI4AAgByBBAAkCOAAIAcAQQA5Agg
+      ACBHAAEAOQIIAMgRQABAjgACAHIEEACQI4AAgBwBBADkCCAAIEcAAQA5AggAyBFAAECOAAIA
+      cgQQAJAjgACAHAEEAOQIIAAgRwABADkCCADIEUAAQI4AAgByBBAAkCOAAIAcAQQA5AggACBH
+      AAEAOQIIAMgRQABAjgACAHIEEACQI4AAgBwBBADkCCAAIEcAAQA5AggAyBFAAECOAAIAcgQQ
+      AJAjgACAHAEEAOQIIAAgRwABADkCCADIEUAAQI4AAgByBBAAkCOAAIAcAQQA5AggACBHAAEA
+      OQIIAMgRQABAjgACAHIEEACQI4AAgBwBBADkCCAAIEcAAQA5AggAyBFAAECOAAIAcgQQAJAj
+      gACAHAEEAOQIIAAgRwABADkCCADIEUAAQI4AAgByBBAAkCOAAIAcAQQA5AggACBHAAEAOQII
+      AMgRQABAjgACAHIEEACQI4AAgBwBBADkCCAAIEcAAQA5AggAyBFAAECOAAIAcgQQAJAjgACA
+      HAEEAOQIIAAgRwABADkCCADIEUAAQI4AAgByBBAAkCOAAIAcAQQA5AggACBHAAEAOQIIAMgR
+      QABAjgACAHIEEACQI4AAgBwBBADkCCAAIEcAAQA5AggAyBFAAECOAAIAcgQQAJAjgACAHAEE
+      AOQIIAAgRwABADkCCADIEUAAQI4AAgByBBAAkCOAAIAcAQQA5AggACBHAAEAOQIIAMgRQABA
+      jgACAHK+CfUUhS2c1qEAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
